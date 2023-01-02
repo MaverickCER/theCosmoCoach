@@ -226,7 +226,7 @@
                         props = is.fn(properties) ? properties(el) : properties,
                         href =
                           el.getAttribute('href') ||
-                          el.getAttributeNS('http://www.w3.org/1999/xlink', 'href') ||
+                          el.getAttributeNS('https://www.w3.org/1999/xlink', 'href') ||
                           el.getAttribute('xlink:href');
                       self.track(ev, props),
                         href &&
@@ -2043,7 +2043,7 @@
         function (require, module, exports) {
           function port(protocol) {
             switch (protocol) {
-              case 'http:':
+              case 'https:':
                 return 80;
               case 'https:':
                 return 443;
@@ -2943,7 +2943,7 @@
         function (require, module, exports) {
           function port(protocol) {
             switch (protocol) {
-              case 'http:':
+              case 'https:':
                 return 80;
               case 'https:':
                 return 443;
@@ -3722,7 +3722,7 @@
               'chrome-extension:' === document.location.protocol;
             options.src &&
               0 === options.src.indexOf('//') &&
-              (options.src = https ? 'https:' + options.src : 'http:' + options.src),
+              (options.src = https ? 'https:' + options.src : 'https:' + options.src),
               https && options.https
                 ? (options.src = options.https)
                 : !https && options.http && (options.src = options.http);
@@ -3790,7 +3790,7 @@
               'chrome-extension:' === document.location.protocol;
             options.src &&
               0 === options.src.indexOf('//') &&
-              (options.src = https ? 'https:' + options.src : 'http:' + options.src),
+              (options.src = https ? 'https:' + options.src : 'https:' + options.src),
               https && options.https
                 ? (options.src = options.https)
                 : !https && options.http && (options.src = options.http);
@@ -3944,7 +3944,7 @@
               map.path =
               map.rect =
               map.g =
-                [1, '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">', '</svg>']);
+                [1, '<svg xmlns="https://www.w3.org/2000/svg" version="1.1">', '</svg>']);
         },
         {},
       ],
@@ -4001,7 +4001,7 @@
       165: [
         function (require, module, exports) {
           function transform(url) {
-            return check() ? 'https:' + url : 'http:' + url;
+            return check() ? 'https:' + url : 'https:' + url;
           }
           function check() {
             return 'https:' == location.protocol || 'chrome-extension:' == location.protocol;
@@ -4043,7 +4043,7 @@
               'chrome-extension:' === document.location.protocol;
             options.src &&
               0 === options.src.indexOf('//') &&
-              (options.src = https ? 'https:' + options.src : 'http:' + options.src),
+              (options.src = https ? 'https:' + options.src : 'https:' + options.src),
               https && options.https
                 ? (options.src = options.https)
                 : !https && options.http && (options.src = options.http);
@@ -5279,7 +5279,7 @@
             .option('trackingId', '')
             .tag('library', '<script src="//www.google-analytics.com/analytics.js">')
             .tag('double click', '<script src="//stats.g.doubleclick.net/dc.js">')
-            .tag('http', '<script src="http://www.google-analytics.com/ga.js">')
+            .tag('http', '<script src="https://www.google-analytics.com/ga.js">')
             .tag('https', '<script src="https://ssl.google-analytics.com/ga.js">'));
           function path(properties, options) {
             if (properties) {
@@ -5456,7 +5456,7 @@
                 sample && push('_setSiteSpeedSampleRate', sample),
                 enhanced)
               ) {
-                var protocol = 'https:' === document.location.protocol ? 'https:' : 'http:',
+                var protocol = 'https:' === document.location.protocol ? 'https:' : 'https:',
                   pluginUrl;
                 push(
                   '_require',
@@ -5802,7 +5802,7 @@
             cookieOptions = { maxage: 31536e6, secure: !1, path: '/' },
             Segment = (exports = module.exports = integration('Segment.io').option('apiKey', ''));
           function scheme() {
-            return 'http:' === protocol() ? 'http:' : 'https:';
+            return 'https:' === protocol() ? 'https:' : 'https:';
           }
           function noop() {}
           (exports.storage = function () {
@@ -6049,7 +6049,7 @@
             return 0 === arguments.length ? get() : set(protocol);
           }),
             (module.exports.http = function () {
-              set('http:');
+              set('https:');
             }),
             (module.exports.https = function () {
               set('https:');
